@@ -1,25 +1,52 @@
 import logo from './logo.svg';
 import './App.css';
+import Display from './components/Display';
+import {useState} from 'react'
+import GetQuestion from './components/GetQuestion';
+
+document.body.style = 'background:rgb(137, 207, 240)'
 
 function App() {
+// This is setting the Score
+  const [score, setScore] = useState(0)
+// This controls the current question
+  const [question, setQuestion] = useState({})
+  // This Shows the answer if True
+  const [show, setShow] = useState(false)
+
+  function Increase(){
+    setScore(score + question.value )
+  }
+
+  function Decease(){
+    setScore(score - question.value)
+  }
+
+  function Reset(){
+    setScore(0)
+  }
+function scoreHandlers() {
+  return (<>
+    <button onClick={Decease}>Decease</button>
+        <button onClick={Increase}>Increase</button>
+  </>)
+}
+console.log(question)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome To Jeopardy!</h1>
+      <h3>Score: {score}</h3>
+      <div>
+        {question?.value && scoreHandlers()}
+        <button onClick={Reset}>Reset</button>
+      </div>
+      <h1> Let's play!</h1>
+      <GetQuestion setQuestion={setQuestion} setShow={setShow}/>
+      <Display question={question} show={show} setShow={setShow}/>
     </div>
+    
   );
 }
+
 
 export default App;
