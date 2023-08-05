@@ -27,18 +27,18 @@ function App() {
   }
 function scoreHandlers() {
   return (<>
-    <button onClick={Decease}>Decease</button>
-        <button onClick={Increase}>Increase</button>
+    <button class="btn btn-warning" onClick={Decease}>Decease</button>
+        <button class="btn btn-info" onClick={Increase}>Increase</button>
   </>)
 }
 console.log(question)
   return (
     <div className="App">
-      <h1>Welcome To Jeopardy!</h1>
+      <h1 className='intro'>Welcome To Jeopardy!</h1>
       <h3>Score: {score}</h3>
       <div>
         {question?.value && scoreHandlers()}
-        <button onClick={Reset}>Reset</button>
+        <button  class="btn btn-danger" onClick={Reset}>Reset</button>
       </div>
       <h1> Let's play!</h1>
       <GetQuestion setQuestion={setQuestion} setShow={setShow}/>

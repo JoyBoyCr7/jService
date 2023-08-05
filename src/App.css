@@ -40,3 +40,24 @@
 .root{
   background-color: #61dafb;
 }
+
+.btn-warning{
+  background-color: pink;
+  border: none;
+}
+.btn{
+  margin-left: 1rem;
+  color: black;
+}
+
+.btn-secondary{
+  background-color: rgb(240,230,140);
+  
+}
+
+.Answer{
+  padding-left: 3rem;
+  padding-right:  3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}

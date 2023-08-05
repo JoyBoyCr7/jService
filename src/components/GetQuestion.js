@@ -14,7 +14,7 @@ function GetQuestion(props){
 
 
     return(
-    <button onClick={fetchQuestion}>GetQuestion</button>
+    <button class="btn btn-secondary" onClick={fetchQuestion}>Get Question</button>
     )
 }
 

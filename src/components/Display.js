@@ -11,11 +11,11 @@ function Display(props){
         console.log(question.question)
         return <> 
             <h3>Category: {question.category.title}</h3>
-            <h3>Points:{question.value}</h3>
+            <h3>Points: {question.value}</h3>
             <h3>Question: {question.question}</h3>
 
             <div>
-                <button onClick={()=> props.setShow(!props.show)}>Click to Reveal and hide Answer </button>
+                <button className="Answer" onClick={()=> props.setShow(!props.show)}>Click to Reveal and hide Answer </button>
                 {
                     props.show?<h1> {question.answer}</h1> : null
                 }
